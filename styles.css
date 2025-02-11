@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    gap: 20px;
+}
+.entete{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+    padding: 30px 40px;
+    box-shadow: 2px 1px 2px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    position: fixed;
+    background-color: #fff;
+    z-index: 100;
+}
+.entete .logo{
+    width: 15%;
+}
+
+.logo span i{
+ margin-right: 30px;
+ color: #333;
+ cursor: pointer;
+}
+
+.logo .fa-folder{
+    color: #FBBC04;
+}
+.entete .recherche{
+    width: 70%;
+}
+.theme i{
+    font-size: 3rem;
+    cursor: pointer;
+}
+.entete #inputSearch{
+    width: 100%;
+    padding: 10px;
+    height: 3rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    outline: none;
+    background-color: #F1F3F4;
+}
+
+#inputSearch:focus{
+    
+    box-shadow: 5px 2px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.partie_gauche{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding: 30px 40px;
+    margin-top: 7rem;
+}
+
+.partie_gauche aside{
+    width: 30%;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.partie_gauche .liste{
+    width: 70%;
+    padding: 20px 30px;
+    line-height: 4;
+    /* background-color: #F1F3F4; */
+
+}
+.champs{
+    width: 80%;
+    background-color: #fff;
+    padding: 10px;
+    /* box-shadow: 3px 2px 3px 1px rgba(0, 0, 0, 0.25); */
+    border-radius: 10px;
+}
+.partie_gauche .liste #Notes,#Notes_2{
+   width: 100%;
+   height: 3rem;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 5px 2px 5px 5px rgba(0, 0, 0, 0.25);
+    font-size: 20px;
+    padding: 10px;
+    outline: none;
+}
+
+#Notes_2{
+    display: none;
+}
+.partie_gauche aside ul{
+    line-height: 4;
+    padding: 20px 30px;
+}
+
+aside ul li{
+    /* border: 1px solid; */
+    list-style: none;
+    font-size: 20px;
+    margin: 10px 0;
+    padding: 0 20px;
+    box-shadow: 2px 3px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    transition: all 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+ul li:hover{
+    background-color: #F1F3F4;
+}
+ ul li:focus{
+    background-color: #FEEFC3;
+    
+}
+aside{
+    box-shadow: 3px 5px 2px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+/* media Queries */
+
+@media screen and (max-width:650px){
+    .content{
+        width: 100%;
+    }
+    .entete{
+        width: 100%;
+        padding: 0;
+    }
+    .logo h1 {
+        font-size: 18px;
+        margin: 0;
+        /* font-weight: 300; */
+    }
+    .logo span i{
+        margin: 5px;
+    }
+    .keep{
+        display: none;
+    }
+    .theme i{
+        font-size: 30px;
+        padding-right: 10px;
+    }
+
+    .partie_gauche{
+        width: 100%;
+        padding: 0;
+    }
+    .liste{
+        padding: 0;
+        width: 100%;
+    }
+
+    .champs{
+        width: 100%;
+    }
+    .champs input{
+        width: 100%;
+    }
+    aside {
+        display: none;
+    }
+}
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+#ajoutNote{
+   background-color: #333;
+   color: #fff;
+   padding: 10px;
+   border: none;
+   border-radius: 10px;
+   width: 300px;
+   margin: auto;
+   display: none;
+
+}
+
+.note_content{
+    border: 1px solid black;
+    width: 80%;
+    margin-top: 10px;
+    padding: 0 30px;
+    line-height: 2;
+    border-radius: 10px;
+    box-shadow: 2px 1px 3px 5px rgba(0, 0, 0, 0.25);
+}
+.note_content h2{
+    text-align: center;
+
+}
+
+.outils i{
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.action{
+    display: flex;
+    justify-content: space-between;
+}
+
+.palette_couleur{
+    display: flex;
+    justify-content: center;
+}
+.palette_couleur div{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 10px;
+    
+    cursor: pointer;
+}

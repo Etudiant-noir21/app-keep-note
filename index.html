@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <div class="entete">
+            <div class="logo">
+                <h1>
+                    <span><i class="fa-solid fa-bars"></i></span> <i class="fa-solid fa-folder"></i> <span class="keep">Keep</span> 
+                </h1>
+            </div>
+            <div class="recherche">
+                <input type="search" name="search" id="inputSearch" placeholder="recherche..">
+            </div>
+
+            <div class="theme">
+                <i class="fa-solid fa-grip"></i>
+                <!-- <i class="fa-solid fa-grip-lines"></i> -->
+            </div>
+        </div>
+
+        <!-- partie gauche -->
+         <div class="partie_gauche">
+
+             <aside>
+                 <ul>
+                    <li><i class="fa-regular fa-lightbulb"></i><span>Notes</span> </li>
+                    <li><i class="fa-solid fa-pencil"></i> <span>Modifier</span></li>
+                    <li><i class="fa-regular fa-bell"></i><span>Rappel</span> </li>
+                    <li><i class="fa-solid fa-trash-can"></i> <span>corbeille</span></li>
+                    <li><i class="fa-solid fa-file-arrow-down"></i><span>Archive</span> </li>
+                 </ul>
+             </aside>
+    
+             <!-- liste -->
+              <div class="liste">
+                <div class="champs">
+                    <form action="" id="myForm">
+                        <input type="text" id="Notes" placeholder="Creer une note">
+                        <textarea name="" id="Notes_2" placeholder="Creer une note" rows="6" ></textarea>
+                         
+                        <button type="submit" id="ajoutNote">Ajouter</button>
+                    </form>
+                </div>
+
+                <div class="contenu_liste">
+
+                </div>
+              </div>
+         </div>
+    </div>
+
+
+    <script src="notes.js"></script>
+</body>
+</html>
