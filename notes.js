@@ -75,17 +75,27 @@ myForm.addEventListener("submit", (e) => {
 
 // sauvegarde dans le localStorage
 function registerLocalStorage(donnes){
-    let  save = JSON.parse(localStorage.getItem("notes")) || []
-    if(!Array.isArray(save)){
+    let save = []
+    try{
+
+        save = JSON.parse(localStorage.getItem("notes")) || []
+        
+    }catch(error){
+        console.error("erreur de l'evoie", error.message);
         save = []
+        
     }
 
-    if(!donnes.couleur){
-        donnes.couleur = "white"
+    if (!Array.isArray(save)) {
+        save = [];
     }
-    
-    save.push(donnes)
-    localStorage.setItem("notes",JSON.stringify(save))
+
+       if(!donnes.couleur){
+           donnes.couleur = "white"
+       }
+       
+       save.push(donnes)
+       localStorage.setItem("notes",JSON.stringify(save))
 
 }
 
@@ -230,7 +240,7 @@ inputSearch.addEventListener("input",(e)=>{
         return note.titres.toLowerCase().includes(searchValue)
 
     })
-    
+
     document.querySelector(".contenu_liste").innerHTML=''
     filterNotes.forEach((note)=>{
       displayNotes(note.titres,note.contenu,note.id,note.couleur || "white")
