@@ -101,7 +101,15 @@ function registerLocalStorage(donnes){
 
 // recuperation des donnes depuis le localStorage
 function getData(){
-    let  save = JSON.parse(localStorage.getItem("notes")) || []
+    let save = []
+    try{
+        save = JSON.parse(localStorage.getItem("notes")) || []
+
+    }catch(error){
+        console.error("erreur survenu:", error.message);
+        save = []
+    }
+    
     if(!Array.isArray(save)){
         save = []
     }
