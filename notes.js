@@ -102,6 +102,7 @@ function registerLocalStorage(donnes){
 // recuperation des donnes depuis le localStorage
 function getData(){
     let save = []
+    
     try{
         save = JSON.parse(localStorage.getItem("notes")) || []
 
@@ -109,7 +110,7 @@ function getData(){
         console.error("erreur survenu:", error.message);
         save = []
     }
-    
+
     if(!Array.isArray(save)){
         save = []
     }
@@ -184,22 +185,25 @@ localStorage.setItem("notes",JSON.stringify(save))
         //   la note a modifier 
           let note = save.find((note) =>note.id ===id)
 
-        //   affichage du note a modifier sur les champs de formulaire
-          if(note){
-            titreNotes.value = note.titres
-            contenuNotes.value = note.contenu
-
+        //   modifier la note directement dans la meme ligne
+        if(note){
+            const p = noteContent.querySelector(".contenu p")
+            p.setAttribute("contenteditable","true")
+            p.focus()
             // ajout id au formulaire 
             myForm.setAttribute("data-edit-id",id)
-
             // changement de text au niveau du button d'envoie
             ajoutNote.textContent = "Modifier"
+
+            // enregistrement de la note modifier
+            p.addEventListener("blur",()=>{
+                p.removeAttribute("contenteditable")
+                modificationNote(note.titres,p.textContent,id)
+            })
           }
         }
 }
 })
-
-
 
 document.addEventListener("click",(e)=>{
     if(e.target.closest(".palette_couleur div")){
@@ -223,8 +227,6 @@ document.addEventListener("click",(e)=>{
 
     }
 })
-
-
 
 // couleur 
 const colors = document.querySelectorAll(".palette_couleur div")
